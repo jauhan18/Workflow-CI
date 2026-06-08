@@ -6,7 +6,7 @@ import os
 import shutil
 
 # Load Data
-df = pd.read_csv('C:\\Users\\Jauhanunu\\Documents\\Pijak\\SMSML_Jauhan-Ahmad\\Eksperimen_SML_Jauhan\\Membangun_model\\dataset_preprocessing\\data_bersih.csv')
+df = pd.read_csv('data_clean.csv')
 X = df.drop(columns=['Survived'])
 y = df['Survived']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
