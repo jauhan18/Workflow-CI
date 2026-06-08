@@ -6,10 +6,10 @@ import os
 import shutil
 
 # Load Data
-df = pd.read_csv('data_clean.csv')
+SML_dir = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(SML_dir, 'data_bersih.csv'))
 X = df.drop(columns=['Survived'])
 y = df['Survived']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Train Model
 model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
